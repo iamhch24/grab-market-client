@@ -1,6 +1,7 @@
 import React from 'react';
 import './index.css';
 import axios from 'axios';
+import {Link} from 'react-router-dom';
 
 function MainPage() {
   // 네트워크 통신
@@ -31,6 +32,7 @@ function MainPage() {
             products.map(function(product,index){
               return (
                 <div className="product-card">
+                  <Link className="product-link" to={`/product/${index}`}>
                 <div>
               <img
                 className="product-img"
@@ -45,6 +47,7 @@ function MainPage() {
                 <span>{product.seller}</span>
               </div>
             </div>
+            </Link>
           </div>
               )
             })
